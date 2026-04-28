@@ -3,8 +3,13 @@ from PIL import Image
 import matplotlib.pyplot as plt
 import random
 
-# Path to the dataset directory (update if the path is different)
-dataset_path = r"C:\Users\ASUS\Desktop\DL_Project\Original Dataset"
+# Path to the dataset directory 
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+dataset_path = BASE_DIR / "Original Dataset"
+
+print(dataset_path)
 
 # ── 1. Check for corrupted image files ─────────────────
 print("Checking corrupted files...")
