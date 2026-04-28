@@ -3,8 +3,13 @@ import matplotlib.pyplot as plt
 from PIL import Image
 from collections import Counter
 
-# Path to the dataset directory (update if the path is different)
-dataset_path = r"C:\Users\ASUS\Desktop\DL_Project\Original Dataset"  
+# Path to the dataset directory 
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+dataset_path = BASE_DIR / "Original Dataset"
+
+print(dataset_path)
 
 # Count the number of images in each class
 class_counts = {}
