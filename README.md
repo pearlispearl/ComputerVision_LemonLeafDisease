@@ -31,8 +31,6 @@ To ensure the system functions correctly, organize your files as follows:
 * **`notebook/plot_curves.py`**: Utility script to generate Loss and Accuracy visualization graphs.
 * **`notebook/eval_metrics.py`**: Script for detailed performance evaluation (Classification Report & Confusion Matrix).
 * **`requirements.txt`**: List of required Python dependencies.
-* **`Dockerfile`**: Configuration file to build the Docker image for the application.
-* **`.dockerignore`**: Specifies files and folders to exclude from the Docker build process.
 * **`sample_grid.png`**: Shows sample images from each class.
 
 ---
@@ -68,34 +66,14 @@ Launch the web interface by executing the following command in your terminal:
 streamlit run app.py
 ```
 
-### 🐳 4. Running with Docker (Alternative Method)
-This project also supports containerized execution using Docker for easier setup and deployment.
-
-**Build Docker Image**: Create the Docker image from the Dockerfile.
-```bash
-  docker build -t lemon-disease-app .
-```
-**Run Docker Container**: Start the container and expose the application on port 8501.
-```bash
-  docker run -p 8501:8501 lemon-disease-app
-```
-**Run Docker Container** (with custom name):
-```bash
-  docker run -d -p 8501:8501 --name lemon-leaf-detection lemon-disease-app
-```
-**Access Application**: Open your browser and go to:
-```bash
-  http://localhost:8501
-```
-
-## 5. Generate Learning Curves
+## 4. Generate Learning Curves
 Execute this script to visualize the Training/Validation Loss and Accuracy from your TensorBoard logs:
 
 ```bash
 python plot_curves.py
 ```
 
-## 6. Run Performance Evaluation
+## 5. Run Performance Evaluation
 Generate a detailed Classification Report and Confusion Matrix for the selected model:
 
 ```bash
@@ -130,15 +108,6 @@ We conducted four iterations to determine the optimal model for deployment:
 * **Weight Optimization**: Implemented **Prefix Management** to resolve weight loading conflicts by dynamically adding the `"model."` prefix to match the internal class architecture.
 * **Error Handling**: Resolved Size Mismatch errors by standardizing Global Average Pooling across the architecture.
 * **Real-world Testing**: Evaluated model robustness against "Out-of-Distribution" data, including leaves with physical damage and varying backgrounds.
-
-### 🐳 Docker Integration Details
-This project was extended with Docker to improve portability and reproducibility:
-
-* **Dockerfile**: Defines the runtime environment for the application.
-* **requirements.txt**: Manages all required Python dependencies.
-* **.dockerignore**: Excludes unnecessary files to reduce image size.
-* **Containerized Execution**: Allows running the application without installing Python locally.
-* **CPU Compatibility**: Ensures the application runs using CPU-based PyTorch for broader support.
 
 ## 🛠 Tech Stack
 * **Framework**: PyTorch
