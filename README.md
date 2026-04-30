@@ -92,8 +92,8 @@ We conducted four iterations to determine the optimal model for deployment:
 
 | Iteration | Model Architecture | Accuracy | Macro F1-Score | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Simple CNN (Baseline) | 62% | 0.49 | Underfitting |
-| 2 | Improved CNN | 20% | 0.14 | Failed (Model Bias) |
+| 1 | Simple CNN (Baseline) | 43% | 0.36 | Underfitting |
+| 2 | Improved CNN | 76% | 0.73 | Failed (Model Bias) |
 | 3 | **ResNet50** | **90%** | **0.88** | **Best Accuracy** |
 | 4 | **MobileNetV2** | **89%** | **0.87** | **Best for Deployment** |
 
